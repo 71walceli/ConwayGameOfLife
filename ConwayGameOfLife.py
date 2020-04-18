@@ -65,24 +65,29 @@ class ConwayGameOfLife:
     Returns a list with all the neighbors that a given cell has.
     """
     x, y = position
-    grid = [[None for x in range(self.width +2)] for y in range(self.height +2)]
-    for row in range(1, self.height +1):    # Index from second row and column to second to last row
-      for cell in range(1, self.width +1):  # and column
-        grid[row][cell] = self.grid[row -1][cell -1]  # indexed for self.grid must be offset.
+    focusedGrid = [[None for _x in range(3)] for _y in range(3)]
+    for row, _row in zip(range(y -1, y +2), range(3)):    # Index from second row and column to second to last row
+      for cell, _cell in zip(range(x -1, x +2), range(3)):  # and column
+        try:
+          if row < 0 or cell < 0: raise IndexError
+          focusedGrid[_row][_cell] = self.grid[row][cell]
+        except IndexError:
+          pass
 
-    neighbors = [x for y in grid for x in y]  # Traverse `grid` and list all the
-    # neighboring cells. `None` values are discarded.
-    #if len(neighbors) > 8: raise BaseException()  # It will actually happen as `neighbors` as it
+    neighbors = [x for y in focusedGrid for x in y]  # Lists all the elements in a flat list
     del neighbors[4]  # Delete the cell in the given position as itself can't be a neighbor.
-    neighbors = [x for y in neighbors if x != None]  # Traverse `grid` and list all the
+    if len(neighbors) > 8: raise BaseException()  # Shouldn't be raised. In fact, it doesn't
+    neighbors = [cell for cell in neighbors if cell != None]  # Traverse `grid` and list all the
+    # neighboring cells. `None` values are discarded.
     return neighbors
 
   def willChange(self, position):
     """
     If this cell 
     """
+    neighbors = self.getNeighbors(position)
     def countAlive():
-      return sum(self.getNeighbors(position))
+      return sum(neighbors)
     x, y = position
     isCellAlive = self.grid[y][x]
     aliveNeighbors = countAlive()
@@ -95,7 +100,7 @@ class ConwayGameOfLife:
   def nextGenerationBuffer(self):
     for row in range(self.height):
       for cell in range(self.width):
-        self.changeBuffer[row][cell] = self.willChange(position)
+        self.changeBuffer[row][cell] = self.willChange((row, cell))
   
   def nextGeneration(self):
     for row in range(self.height):
