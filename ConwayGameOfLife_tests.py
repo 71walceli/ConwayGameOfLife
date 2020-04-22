@@ -71,46 +71,53 @@ class NeighborDetection(BaseTest):
     self.game = ConwayGameOfLife.ConwayGameOfLife(grid_initial)
 
   def test_neighborsAt2_2_BigGrid(self):
-    self.createSmallGrid()
+    self.createBigGrid()
     position          = (2,2)
     neighbors         = self.game.getNeighbors(position)
     expectedNeighbors = [1,0,1,0,0,1,0,1]
+    self.assertEquals(neighbors, expectedNeighbors)
   
   def test_neighborsAt1_1_BigGrid(self):
-    self.createSmallGrid()
+    self.createBigGrid()
     position          = (1,1)
     neighbors         = self.game.getNeighbors(position)
     expectedNeighbors = [0,0,1,0,0,1,0,0]
+    self.assertEquals(neighbors, expectedNeighbors)
   
   def test_neighborsAt3_4_BigGrid(self):
-    self.createSmallGrid()
+    self.createBigGrid()
     position          = (3,4)
     neighbors         = self.game.getNeighbors(position)
-    expectedNeighbors = [0,0,1,0,0]
+    expectedNeighbors = [0,1,0,1,0]
+    self.assertEquals(neighbors, expectedNeighbors)
 
   def test_neighborsAt1_1_smallGrid(self):
     self.createSmallGrid()
     position          = (1,1)
     neighbors         = self.game.getNeighbors(position)
     expectedNeighbors = [0,1,0,1,1,0,1,0]
+    self.assertEquals(neighbors, expectedNeighbors)
   
   def test_neighborsAt0_0_smallGrid(self):
     self.createSmallGrid()
     position          = (0,0)
     neighbors         = self.game.getNeighbors(position)
     expectedNeighbors = [1,1,1]
+    self.assertEquals(neighbors, expectedNeighbors)
   
   def test_neighborsAt2_2_smallGrid(self):
     self.createSmallGrid()
     position          = (2,2)
     neighbors         = self.game.getNeighbors(position)
     expectedNeighbors = [1,1,1]
+    self.assertEquals(neighbors, expectedNeighbors)
   
   def test_neighborsAt1_2_smallGrid(self):
     self.createSmallGrid()
     position          = (1,2)
     neighbors         = self.game.getNeighbors(position)
     expectedNeighbors = [1,1,1,0,0]
+    self.assertEquals(neighbors, expectedNeighbors)
   
 class TestRules(BaseTest):
   def grid1(self):
@@ -132,13 +139,24 @@ class TestRules(BaseTest):
     self.game.nextGeneration()
     self.assertEqual(self.game.grid, grid_expected)
 
-  def test_threeCellsChange(self):
+  def test_threeCellsChange_gen1(self):
     self.grid1()
     grid_expected = [
       [0,0,0], 
       [1,1,1], 
       [0,0,0], 
     ]
+    self.game.nextGeneration()
+    self.assertEqual(self.game.grid, grid_expected)
+
+  def test_threeCellsChange_gen2(self):
+    self.grid1()
+    grid_expected = [
+      [0,1,0], 
+      [0,1,0], 
+      [0,1,0], 
+    ]
+    self.game.nextGeneration()
     self.game.nextGeneration()
     self.assertEqual(self.game.grid, grid_expected)
 

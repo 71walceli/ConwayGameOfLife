@@ -2,6 +2,8 @@ class ConwayGameOfLife:
   """
   Implementation of Conway's Game of Life.
   """
+  # TODO Use a custom class for managing grids
+
   def __init__(self, grid):
     """
     Initializes `ConwayGameOfLife` with its grid and its attributes, such as generation count.
@@ -100,7 +102,7 @@ class ConwayGameOfLife:
   def nextGenerationBuffer(self):
     for row in range(self.height):
       for cell in range(self.width):
-        self.changeBuffer[row][cell] = self.willChange((row, cell))
+        self.changeBuffer[row][cell] = self.willChange((cell, row))
   
   def nextGeneration(self):
     for row in range(self.height):
