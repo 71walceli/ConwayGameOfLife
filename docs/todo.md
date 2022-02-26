@@ -1,0 +1,14 @@
+# Requirements
+- [ ] Modern Design
+  - [ ] RSuite controls
+- [ ] API connected to DB
+  - [ ] Node.js API backend
+- [ ] Database
+  - [ ] Entities
+    - [ ] Game
+      - [ ] ID
+      - [ ] Turn
+      - [ ] Parent game
+      - [ ] Tiles
+        - [ ] ID
+        - [ ] State
