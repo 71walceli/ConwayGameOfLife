@@ -1,6 +1,6 @@
 html {
-  color: wheat;
-  background-color: #222;
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
 }
 
 .App {
@@ -30,7 +30,7 @@ html {
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--linkColor);
 }
 
 @keyframes App-logo-spin {
@@ -45,8 +45,16 @@ html {
 .Tile {
   width: 25px;
   height: 25px;
+  border: 1px dotted var(--textColor);
 }
 
 .Tile.true {
-  background-color: aqua;
+  background-color: var(--primary);
+}
+
+:root {
+  --textColor: wheat;
+  --primaryColor: aqua;
+  --linkColor: #61dafb;
+  --backgroundColor: #222;
 }
