@@ -1,4 +1,5 @@
-//import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import Game from './Game.js'
 import { ArrowLeft, ArrowRight } from '@rsuite/icons';
 import Grid from './Grid.js'
@@ -24,7 +25,7 @@ function App() {
     backgroundColor: "black",
     fontSize: "1.5em",
   };
-
+  
   return (
     <div>
       <Game grid={grid}  />
