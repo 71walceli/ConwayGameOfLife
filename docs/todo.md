@@ -1,6 +1,16 @@
 # Requirements
+- [x] Game 
+  - [x] Basic logic
+    - [ ] Unit testing
+  - [ ] History up to user-defined maximum moves
+- [ ] Start menu
+  - [ ] Set up new game
+    - [ ] Grid parameters
+  - [ ] List all games for logged in users
 - [ ] Modern Design
   - [ ] RSuite controls
+  - [ ] Header
+  - [ ] Footer
 - [ ] API connected to DB
   - [ ] Node.js API backend
 - [ ] Database
@@ -9,6 +19,11 @@
       - [ ] ID
       - [ ] Turn
       - [ ] Parent game
+      - [ ] User
+        - [ ] ID
+        - [ ] Name
+        - [ ] Username
+        - [ ] Password
       - [ ] Tiles
         - [ ] ID
         - [ ] State
