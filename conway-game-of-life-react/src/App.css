@@ -1,11 +1,14 @@
-html {
+html, body, .App {
   color: var(--textColor);
+  background: none;
   background-color: var(--backgroundColor);
 }
 
+/*
 .App {
   text-align: center;
 }
+*/
 
 .App-logo {
   height: 40vmin;
@@ -49,7 +52,22 @@ html {
 }
 
 .Tile.true {
-  background-color: var(--primary);
+  background-color: var(--primaryColor);
+}
+
+/* TODO Make it centered and full width */
+.RockerButtonContainer {
+}
+.RockerButtonContainer button {
+  border: 2px solid var(--primaryColor);
+}
+.RockerButtonContainer button:first-child {
+  border-top-left-radius: var(--smallBorderRadius);
+  border-bottom-left-radius: var(--smallBorderRadius);
+}
+.RockerButtonContainer button:last-child {
+  border-top-right-radius: var(--smallBorderRadius);
+  border-bottom-right-radius: var(--smallBorderRadius);
 }
 
 :root {
@@ -57,4 +75,5 @@ html {
   --primaryColor: aqua;
   --linkColor: #61dafb;
   --backgroundColor: #222;
+  --smallBorderRadius: 30%;
 }
