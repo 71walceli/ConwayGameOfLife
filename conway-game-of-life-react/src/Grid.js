@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 class Grid {
   constructor(grid) {
     this.width = grid.width
