@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react'
-import Grid from './Grid.js'
 import Tile from './Tile.js'
 
 const Game = props => {
-  const [grid, setGrid] = useState(new Grid(props.grid));
+  // TODO App must manage it's own style
+  const grid = props.grid;
   
   return(
     <table className="grid">
@@ -11,9 +10,9 @@ const Game = props => {
         {grid.tiles.map((row, y) =>
           <tr key={`Row ${y}`}> 
             {row.map((cell, x) => 
-              <td key={`Tile at ${x}, ${y}`}>
-              <Tile state={cell} />
-            </td>
+              <td key={`Tile ${x}, ${y}`}>
+                <Tile state={cell} />
+              </td>
             )}
           </tr>
         )}
