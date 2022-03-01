@@ -35,8 +35,7 @@ function App() {
         </button>
         <button style={rockerButtonStyle}
           onClick={() => {
-            const nextStep = grid.nextStep()
-            setGrid(nextStep)
+            game.nextStep()
           }}
         >
           <ArrowRight />
