@@ -7,7 +7,7 @@ const Tile = props => {
   useEffect(() => setState(props.state))
 
   return (
-    <div className={`Tile ${state}`}></div>
+    <div className={`Tile ${state}`} onClick={props.onClick}></div>
   )
 }
 
