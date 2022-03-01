@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Game from './Game.js'
 import { ArrowLeft, ArrowRight } from '@rsuite/icons';
-import Grid from './Grid.js'
 import { useEffect, useState } from 'react';
 
 
