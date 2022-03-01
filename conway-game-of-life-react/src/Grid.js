@@ -52,6 +52,15 @@ class Grid {
     return changeBuffer
   }
 
+  clone() {
+    const newGrid = {}
+    newGrid.width = this.width
+    newGrid.height = this.height
+    newGrid.tiles = this.tiles.slice().map(row => row.slice())
+    
+    return new Grid(newGrid)
+  }
+
   nextStep() {
     const changeBuffer = this.getChangeBuffer()
     const newGrid = {}
