@@ -28,7 +28,7 @@ function App() {
   
   return (
     <div>
-      <Game grid={grid}  />
+      <Game grid={gridData} parentBinder={setGame} />
       <div className='RockerButtonContainer'>
         <button style={rockerButtonStyle}>
           <ArrowLeft />
