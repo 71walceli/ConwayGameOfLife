@@ -1,12 +1,17 @@
 # Requirements
 - [x] Game 
   - [x] Basic logic
-    - [ ] Unit testing
   - [ ] History up to user-defined maximum moves
+  - [ ] Unit testing
 - [ ] Start menu
   - [ ] Set up new game
-    - [ ] Grid parameters
+    - [ ] Game parameters
+      - [ ] Name
+      - [ ] Width
+      - [ ] Height
+      - [ ] Random grid toggle
   - [ ] List all games for logged in users
+- [ ] Game settings
 - [ ] Modern Design
   - [ ] RSuite controls
   - [ ] Header
@@ -17,6 +22,9 @@
   - [ ] Entities
     - [ ] Game
       - [ ] ID
+      - [ ] Name
+      - [ ] Width
+      - [ ] Height
       - [ ] Turn
       - [ ] Parent game
       - [ ] User
