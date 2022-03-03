@@ -1,12 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.less';
 import './index.css';
-import App from './App';
+import GameApp from './GameApp';
+import { MainMenu } from './MainMenu'
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { NewGameSetup } from './NewGameSetup';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    {/* TODO Add header */}
+      <main>
+        <Routes>
+          <Route exaxt path='/' element={ <MainMenu /> } />
+          <Route exaxt path='/NewGame' element={ <NewGameSetup /> } />
+          <Route exaxt path='/Game' element={ <GameApp /> } />
+          <Route path="*" element={ <p>Not Found</p> } />
+        </Routes>
+      </main>
+    {/* TODO Add footer */}
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
