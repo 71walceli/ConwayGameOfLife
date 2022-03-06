@@ -10,7 +10,7 @@ const NewGameSetup = (props) => {
     randomGrid: false,
   })
   const integerRequiredErrorMessage = "Must be integer"
-  const [nameError, setNameError] = useState(true)
+  const [nameError, setNameError] = useState(false)
   const [widthError, setWidthError] = useState(false)
   const [heightError, setHeightError] = useState(false)
   const navigate = useNavigate()
@@ -25,8 +25,7 @@ const NewGameSetup = (props) => {
         <Form.ControlLabel>Name</Form.ControlLabel>
         <Form.Control name="name" errorPlacement="bottomEnd" 
           errorMessage={nameError ? "A name is required." : ""} 
-          onChange={ value => {setNameError(!value.length)} }
-          />
+        />
         <Form.HelpText tooltip>Required</Form.HelpText>
       </Form.Group>
 
