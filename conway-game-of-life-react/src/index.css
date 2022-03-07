@@ -1,3 +1,17 @@
+/*
+@import 'index.less';
+*/
+
+
+:root {
+  --textColor: wheat;
+  --primaryColor: aqua;
+  --linkColor: lightred;
+  --backgroundColor: #222;
+  --backgroundColorPrimary: #000;
+  --smallBorderRadius: 30%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +25,82 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html, body, .App {
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
+  /*
+  background: none;
+  */
+}
+
+/*
+.App {
+  text-align: center;
+}
+*/
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+a {
+  color: var(--linkColor);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Tile {
+  width: 25px;
+  height: 25px;
+  border: 1px dotted var(--textColor);
+}
+
+.Tile.true {
+  background-color: var(--primaryColor);
+}
+
+/* TODO Make it centered and full width */
+.RockerButtonContainer {
+}
+.RockerButtonContainer button {
+  border: 2px solid var(--primaryColor);
+  color: var(--primaryColor);
+  background-color: var(--backgroundColorPrimary);
+  font-size: "1.5em";
+}
+.RockerButtonContainer button:first-child {
+  border-top-left-radius: var(--smallBorderRadius);
+  border-bottom-left-radius: var(--smallBorderRadius);
+}
+.RockerButtonContainer button:last-child {
+  border-top-right-radius: var(--smallBorderRadius);
+  border-bottom-right-radius: var(--smallBorderRadius);
+}
+
+

@@ -1,17 +1,9 @@
 /* eslint-disable array-callback-return */
 class Grid {
-  constructor(grid) {
-    this.width = grid.width
-    this.height = grid.height
-    this.tiles = new Array(this.height).fill().map(() => Array(this.width).fill(0))
-
-    if (grid.tiles) {
-      this.tiles.map((_, i) => {
-        this.tiles[i].map((_, j) => {
-          this.tiles[i][j] = grid.tiles[i][j]
-        })
-      })
-    }
+  constructor(gridData) {
+    this.width = gridData.width
+    this.height = gridData.height
+    this.tiles = gridData.tiles
   }
   
   getNeighbors (x, y) {
@@ -20,9 +12,7 @@ class Grid {
       for (let _x=0; _x<=2; _x++) {  // and column
         try {
           neighbors[_y*3 +_x] = this.tiles[y+_y-1][x+_x-1]
-        } catch (error) {
-          continue
-        }
+        } catch (error) {}
       }
     }
 
