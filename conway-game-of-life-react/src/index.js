@@ -1,13 +1,16 @@
+/* eslint-disable array-callback-return */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { Container, Header, Content, Footer, Navbar, Nav, Dropdown } from 'rsuite';
+import reportWebVitals from './reportWebVitals';
+
 import './index.less';
 import './index.css';
-import GameApp from './GameApp';
-import { MainMenu } from './MainMenu'
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { NewGameSetup } from './NewGameSetup';
 
+import GameApp from './Components/GameApp';
+import { MainMenu } from './Components/MainMenu'
+import { NewGameSetup } from './Components/NewGameSetup';
 
 ReactDOM.render(
   <React.StrictMode>
