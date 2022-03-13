@@ -18,12 +18,12 @@ const NewGameSetup = (props) => {
   const handleChange = (data) => {
     setFormData(data); 
   };
-  
+
   return (
     <Form formValue={formData} onChange={handleChange} action="/GameApp" method='post'>
       <Form.Group controlId="gameName">
         <Form.ControlLabel>Name</Form.ControlLabel>
-        <Form.Control name="name" errorPlacement="bottomEnd" 
+        <Form.Control name="name" errorPlacement="bottomEnd"
           errorMessage={nameError ? "A name is required." : ""} 
         />
         <Form.HelpText tooltip>Required</Form.HelpText>

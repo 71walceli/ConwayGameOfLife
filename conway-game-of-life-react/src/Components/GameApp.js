@@ -1,12 +1,9 @@
-import './App.css';
 import Game from './Game.js'
 
 import { ArrowLeft, ArrowRight } from '@rsuite/icons';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom'
 import Grid from './Grid';
-
-const reloadToken = Math.random(0,1)
 
 function GameApp(props) {
   const location = useLocation()
@@ -59,8 +56,6 @@ function GameApp(props) {
       })
     })
   }
-
-  const handleGridChange = (grid) => {}
 
   const handleTileClick = (x,y) => {
     setCurrentGrid((_currentGrid) => {
