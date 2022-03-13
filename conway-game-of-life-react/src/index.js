@@ -12,20 +12,59 @@ import GameApp from './Components/GameApp';
 import { MainMenu } from './Components/MainMenu'
 import { NewGameSetup } from './Components/NewGameSetup';
 
+
+const Index = () => {
+  const navItems = [
+    {
+      displayName: "Main Meno",
+      href: "/",
+    },
+    {
+      displayName: "Save Game",
+      href: "/Manage",
+    },
+    {
+      displayName: "About",
+      href: "/About",
+    },
+  ]
+
+  return (
+    <BrowserRouter>
+      <Container>
+        <Header>
+          <h3>Conway's Game of Life</h3>
+          <nav style={{
+            float: "right"
+          }}>
+            {" | "}
+            <Link to="/">Main Meno</Link>
+            {" | "}
+            <Link to="/">Save Game</Link>
+            {" | "}
+            <Link to="/">About</Link>
+            {" | "}
+          </nav>
+        </Header>
+        <Content>
+          <Routes>
+            <Route exaxt path='/' element={<MainMenu />} />
+            <Route exaxt path='/NewGame' element={<NewGameSetup />} />
+            <Route exaxt path='/Game' element={<GameApp />} />
+            <Route path="*" element={<p>Not Found</p>} />
+          </Routes>
+        </Content>
+        <Footer>
+          By 71walceli
+        </Footer>
+      </Container>
+    </BrowserRouter>
+  )
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-    {/* TODO Add header */}
-      <main>
-        <Routes>
-          <Route exaxt path='/' element={ <MainMenu /> } />
-          <Route exaxt path='/NewGame' element={ <NewGameSetup /> } />
-          <Route exaxt path='/Game' element={ <GameApp /> } />
-          <Route path="*" element={ <p>Not Found</p> } />
-        </Routes>
-      </main>
-    {/* TODO Add footer */}
-    </BrowserRouter>
+    <Index />
   </React.StrictMode>,
   document.getElementById('root')
 );
