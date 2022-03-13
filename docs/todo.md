@@ -1,37 +1,23 @@
 # Requirements
 - [x] Game 
-  - [x] Basic logic
-  - [ ] History up to user-defined maximum moves
-  - [ ] Unit testing
-- [ ] Start menu
-  - [ ] Set up new game
-    - [ ] Game parameters
-      - [ ] Name
-      - [ ] Width
-      - [ ] Height
-      - [ ] Random grid toggle
-  - [ ] List all games for logged in users
+    - [x] Basic logic
+    - [x] History up to user-defined maximum moves
+        - [ ] History up to user-defined maximum moves
+    - [ ] Unit testing
+  - [ ] Start menu
+      - [ ] Set up new game
+          - [ ] Game parameters
+              - [ ] Name
+              - [ ] Width
+              - [ ] Height
+              - [ ] Random grid toggle
+    - [ ] List all games for logged in users
 - [ ] Game settings
 - [ ] Modern Design
-  - [ ] RSuite controls
-  - [ ] Header
-  - [ ] Footer
-- [ ] API connected to DB
-  - [ ] Node.js API backend
-- [ ] Database
-  - [ ] Entities
-    - [ ] Game
-      - [ ] ID
-      - [ ] Name
-      - [ ] Width
-      - [ ] Height
-      - [ ] Turn
-      - [ ] Parent game
-      - [ ] User
-        - [ ] ID
-        - [ ] Name
-        - [ ] Username
-        - [ ] Password
-      - [ ] Tiles
-        - [ ] ID
-        - [ ] State
+    - [ ] RSuite controls
+    - [ ] Header
+    - [ ] Footer
+- [ ] Backend
+    - [ ] API connected to DB
+        - [ ] Node.js API backend
+    - [ ] Database
