@@ -37,7 +37,7 @@ const Index = () => {
 
   return (
     <BrowserRouter>
-      <Container>
+      <Container className="rs-theme-dark">
         <Header>
           <h3>Conway's Game of Life</h3>
           <nav style={{
