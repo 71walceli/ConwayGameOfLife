@@ -32,7 +32,7 @@ const Index = () => {
       password: "",
       rememberLogin: false,
     })
-  
+
     const validateUsername = () => formData.username !== ""
     const validatePassword = () => formData.password !== ""
 
@@ -42,23 +42,23 @@ const Index = () => {
           <Modal.Title>Modal Title</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <Form formValue={formData} onChange={(data) => {setFormData(data)}}>
-          <Form.Group controlId="username">
-            <Form.ControlLabel>Username</Form.ControlLabel>
+          <Form formValue={formData} onChange={(data) => {setFormData(data)}}>
+            <Form.Group controlId="username">
+              <Form.ControlLabel>Username</Form.ControlLabel>
               <Form.Control name="username" errorPlacement="bottomEnd"
                 errorMessage={validateUsername() ? "" : "Required"} 
-            />
-          </Form.Group>
-          <Form.Group controlId="password">
-            <Form.ControlLabel>Password</Form.ControlLabel>
+              />
+            </Form.Group>
+            <Form.Group controlId="password">
+              <Form.ControlLabel>Password</Form.ControlLabel>
               <Form.Control name="password" errorPlacement="bottomEnd" type='password'
                 errorMessage={validatePassword() ? "" : "Required"} 
-            />
-          </Form.Group>
-          <Form.Group controlId='rememberLogin'>
-            <Form.ControlLabel>Remember login</Form.ControlLabel>
+              />
+            </Form.Group>
+            <Form.Group controlId='rememberLogin'>
+              <Form.ControlLabel>Remember login</Form.ControlLabel>
               <Form.Control name='rememberLogin' accepter={Toggle} />
-          </Form.Group>
+            </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
@@ -71,9 +71,9 @@ const Index = () => {
               //handleClose()
               console.log({formData: formData})
             }} 
-            >
+          >
             Log In
-            </Button>
+          </Button>
           <Button onClick={handleClose} appearance="subtle">
             Cancel
           </Button>
@@ -94,7 +94,7 @@ const Index = () => {
             </Nav>
             <Nav pullRight>
               <Nav.Item onClick={handleOpen}>
-                  <UserCircle />
+                <UserCircle />
               </Nav.Item>
               <Nav.Item>Settings</Nav.Item>
             </Nav>
