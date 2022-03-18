@@ -41,7 +41,44 @@ const Index = () => {
     return (
       <Popover title="Log In" className="rs-theme-dark">
         {/*
-        <Form formValue={formData} onChange={(data) => {setFormData(data)}} action="/GameApp" method='post'>
+        BUG: This actually throws an error on rendering. AFAIK, no error in my code...
+
+        Stack trace:
+
+          Uncaught Error: Argument appears to not be a ReactComponent. Keys: child,updatePosition
+            at findHostInstanceWithWarning (react-dom.development.js:25383:1)
+            at findDOMNode (react-dom.development.js:26067:1)
+            at getDOMNode (getDOMNode.js:17:1)
+            at Transition.getChildElement (Transition.js:190:1)
+            at Transition.performEnter (Transition.js:205:1)
+            at Transition.componentDidMount (Transition.js:90:1)
+            at commitLifeCycles (react-dom.development.js:20663:1)
+            at commitLayoutEffects (react-dom.development.js:23426:1)
+            at HTMLUnknownElement.callCallback (react-dom.development.js:3945:1)
+            at Object.invokeGuardedCallbackDev
+
+          The above error occurred in the <Transition> component:
+            at Transition (http://localhost:3000/static/js/bundle.js:93612:30)
+            at http://localhost:3000/static/js/bundle.js:93519:27
+            at http://localhost:3000/static/js/bundle.js:99046:70
+            at http://localhost:3000/static/js/bundle.js:102991:25
+            at http://localhost:3000/static/js/bundle.js:99246:70
+            at http://localhost:3000/static/js/bundle.js:101688:22
+            at a
+            at http://localhost:3000/static/js/bundle.js:100407:25
+            at http://localhost:3000/static/js/bundle.js:98909:25
+            at http://localhost:3000/static/js/bundle.js:98634:25
+            at div
+            at http://localhost:3000/static/js/bundle.js:98458:25
+            at nav
+            at http://localhost:3000/static/js/bundle.js:98781:25
+            at header
+            at http://localhost:3000/static/js/bundle.js:102052:27
+            at section
+            at http://localhost:3000/static/js/bundle.js:94098:25
+            at Router (http://localhost:3000/static/js/bundle.js:89034:15)
+            at BrowserRouter (http://localhost:3000/static/js/bundle.js:88510:5)
+            at Index (http://localhost:3000/static/js/bundle.js:1046:67)
         */}
         <Form formValue={formData} onChange={(data) => {setFormData(data)}}>
           <Form.Group controlId="username">
