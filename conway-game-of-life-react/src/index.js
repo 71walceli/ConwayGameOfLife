@@ -20,20 +20,58 @@ import { NewGameSetup } from './Components/NewGameSetup';
 
 
 const Index = () => {
-  const navItems = [
-    {
-      displayName: "Main Meno",
-      href: "/",
-    },
-    {
-      displayName: "Save Game",
-      href: "/Manage",
-    },
-    {
-      displayName: "About",
-      href: "/About",
-    },
-  ]
+  const triggerRef = useRef()
+  
+  const UserDialog = () => {
+    const [formData, setFormData] = useState({
+      username: "",
+      password: "",
+    })
+    const UsernamePasswordValidationMessage = "Required"
+    const [usernameError, setUsernameError] = useState(true)
+    const [passwordError, setPasswordError] = useState(true)
+  
+    const handleChange = (data) => {
+      setFormData(data); 
+    };
+
+    const validateUsername = () => formData.username === ""
+    const validatePassword = () => formData.password === ""
+
+    return (
+      <Popover title="Log In" className="rs-theme-dark">
+        {/*
+        <Form formValue={formData} onChange={(data) => {setFormData(data)}} action="/GameApp" method='post'>
+        */}
+        <Form formValue={formData} onChange={(data) => {setFormData(data)}}>
+          <Form.Group controlId="username">
+            <Form.ControlLabel>Username</Form.ControlLabel>
+            <Form.Control name="name" errorPlacement="bottomEnd"
+              errorMessage={validateUsername() ? "Required" : ""} 
+            />
+          </Form.Group>
+          <Form.Group controlId="password">
+            <Form.ControlLabel>Password</Form.ControlLabel>
+            <Form.Control name="name" errorPlacement="bottomEnd" type='password'
+              errorMessage={validatePassword() ? "Required" : ""} 
+            />
+          </Form.Group>
+          <Form.Group controlId='rememberLogin'>
+            <Form.ControlLabel>Remember login</Form.ControlLabel>
+            <Form.Control name='randomGrid' accepter={Toggle} />
+          </Form.Group>
+          <Form.Group controlId='formActions'>
+            <Button appearance='primary' color="green" type="submit"
+              disabled={validateUsername() && validatePassword()} 
+              onClick={() => {}}
+            >
+              Log in
+            </Button>
+          </Form.Group>
+        </Form>
+      </Popover>
+    )
+  }
 
   return (
     <BrowserRouter>
