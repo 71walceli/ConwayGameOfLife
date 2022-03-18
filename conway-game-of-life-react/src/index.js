@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { 
-  Container, Header, Content, Footer, Navbar, Nav, Form, InputGroup, InputNumber, Toggle
+  Container, Header, Content, Footer, Navbar, Nav, Form, InputGroup, InputNumber, Toggle, Modal
 } from 'rsuite';
 import reportWebVitals from './reportWebVitals';
 import UserCircle from '@rsuite/icons/legacy/UserCircle'
