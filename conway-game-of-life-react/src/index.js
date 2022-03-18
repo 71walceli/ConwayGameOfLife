@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { 
   Container, Header, Content, Footer, Navbar, Nav, Form, InputGroup, InputNumber, Toggle, Modal
 } from 'rsuite';
-import reportWebVitals from './reportWebVitals';
+//import reportWebVitals from './reportWebVitals';
 import UserCircle from '@rsuite/icons/legacy/UserCircle'
 import { Popover, Whisper } from 'rsuite';
 import { Button, ButtonToolbar } from 'rsuite';
@@ -127,4 +127,4 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//reportWebVitals();
