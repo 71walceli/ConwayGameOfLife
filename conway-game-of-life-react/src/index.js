@@ -39,18 +39,23 @@ const Index = () => {
     <BrowserRouter>
       <Container className="rs-theme-dark">
         <Header>
-          <h3>Conway's Game of Life</h3>
-          <nav style={{
-            float: "right"
-          }}>
-            {" | "}
-            <Link to="/">Main Meno</Link>
-            {" | "}
-            <Link to="/">Save Game</Link>
-            {" | "}
-            <Link to="/">About</Link>
-            {" | "}
-          </nav>
+          <Navbar>
+            <Navbar.Brand href="#">Conway</Navbar.Brand>
+            <Nav>
+              <Nav.Item>Main Menu</Nav.Item>
+              <Nav.Item>Save Game</Nav.Item>
+            </Nav>
+            <Nav pullRight>
+              <Nav.Item>
+                <Whisper placement="auto" ref={triggerRef} trigger="click"
+                  speaker={UserDialog}
+                >
+                  <UserCircle />
+                </Whisper>
+              </Nav.Item>
+              <Nav.Item>Settings</Nav.Item>
+            </Nav>
+          </Navbar>
         </Header>
         <Content>
           <Routes>
