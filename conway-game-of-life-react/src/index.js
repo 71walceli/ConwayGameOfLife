@@ -61,7 +61,7 @@ const Index = () => {
           </Routes>
         </Content>
         <Footer>
-          By 71walceli
+          {"By 71walceli"}
         </Footer>
       </Container>
     </BrowserRouter>
