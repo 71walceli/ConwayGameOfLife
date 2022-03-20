@@ -24,6 +24,8 @@ const connection = mysql.createConnection({
   password : 'aTKy[Dd@o9TL.j4S',
   database : 'conway_game_of_life',
 });
+//console.log(connection)
+
 
 const app = express()
 app.use(cors())
@@ -45,7 +47,6 @@ app.get('/', (request, response) => {
       const records = results.map(row => ({...row}) )
       response.json(records)
     })
-    res.json(users)
   })
   app.post('/users', (request, response, next) => {
     const newUser = request.body
@@ -162,14 +163,13 @@ app.get('/', (request, response) => {
           respoense.json({message: "No such record."})
           next(new Error("No such record."))
           return
-        } else {
-          throw error
         }
+        respoense.json({})
       }
-      res.json({})
-    }
-  );
-})
+    );
+  })
+//#endregion
+
 
 app.use((error, request, response, next) => {
   logError(request)
@@ -178,7 +178,6 @@ app.use((error, request, response, next) => {
 
 app.listen(port, (() => {
   connection.connect()
-  console.log(`API backend listening on port ${port}`)
 }))
 
 function logError(req, extraData) {
