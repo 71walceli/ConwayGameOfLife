@@ -4,6 +4,20 @@ const bodyParser = require('body-parser')
 var cors = require('cors')
 
 
+const sqlQuery = (connection, sql) => { // TODO Word in progress
+  return connection.query(sql, (error, results, fields) => {
+    const resultSet = {}
+    if (error) {
+      throw error
+    }
+    resultSet.affectedRows = results.affectedRows
+    resultSet.changedRows = results.changedRows
+    if (results.affectedRows > 0) {
+      resultSet.data = results.map( row => ({...row}) )
+    }
+    return resultSet
+  }
+)}
 const connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'convay_server',
