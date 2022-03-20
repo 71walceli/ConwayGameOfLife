@@ -1,6 +1,7 @@
 const express = require('express')
 const mysql = require('mysql');
 const bodyParser = require('body-parser')
+var cors = require('cors')
 
 
 const connection = mysql.createConnection({
@@ -11,6 +12,7 @@ const connection = mysql.createConnection({
 });
 
 const app = express()
+app.use(cors())
 app.use(bodyParser.json());
 const port = 4000
 
