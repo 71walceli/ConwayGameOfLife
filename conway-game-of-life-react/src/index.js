@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { 
-  Container, Header, Content, Footer, Navbar, Nav, Form, InputGroup, InputNumber, Toggle, Modal
+  Container, Header, Content, Footer, Navbar, Nav, Form, Toggle, Modal
 } from 'rsuite';
 //import reportWebVitals from './reportWebVitals';
 import UserCircle from '@rsuite/icons/legacy/UserCircle'
@@ -17,16 +17,16 @@ import './index.css';
 import GameApp from './Components/GameApp';
 import { MainMenu } from './Components/MainMenu'
 import { NewGameSetup } from './Components/NewGameSetup';
+import { makeApiRequest } from './Utils'
 
 
 const Index = () => {
-  const triggerRef = useRef()
-  
   const [UserDialogOpen, setUserDialogOpen] = React.useState(false);
   const handleOpen = () => setUserDialogOpen(true);
   const handleClose = () => setUserDialogOpen(false);
   
   const UserDialog = () => {
+    const [loggingIn, setLogingIn] = useState(false)
     const [formData, setFormData] = useState({
       username: "",
       password: "",
@@ -37,9 +37,9 @@ const Index = () => {
     const validatePassword = () => formData.password !== ""
 
     return (
-      <Modal className="rs-theme-dark" open={UserDialogOpen} onClose={handleClose}>
+      <Modal className="rs-theme-dark" open={UserDialogOpen} onClose={handleClose} size="lg">
         <Modal.Header>
-          <Modal.Title>Modal Title</Modal.Title>
+          <Modal.Title>Log In</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form formValue={formData} onChange={(data) => {setFormData(data)}}>
