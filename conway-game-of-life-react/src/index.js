@@ -66,10 +66,25 @@ const Index = () => {
             Sign Up
           </Button>
           <Button appearance="primary"
-            disabled={!validateUsername() || !validatePassword()}
-            onClick={() => {
-              //handleClose()
-              console.log({formData: formData})
+            disabled={!validateUsername() || !validatePassword() || loggingIn}
+            onClick={async () => {
+              //setLogingIn(true)
+              /*
+              */
+              const user = (await makeApiRequest("POST", "http://localhost:4000/users/login", {
+                username: formData.username,
+                password: formData.password,
+              })).data[0]
+              if (user !== undefined) {
+                user.password = formData.password
+                user.rememberLogin = formData.rememberLogin
+                localStorage.setItem("userCredentials", JSON.stringify(user))
+                console.log(`Welcome ${user.name}!`)
+                handleClose()
+              } else {
+                console.log(`Wrong uwername or password`)
+                setLogingIn(false)
+              }
             }} 
           >
             Log In
